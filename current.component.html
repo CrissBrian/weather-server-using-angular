@@ -1,0 +1,48 @@
+<div class="card-group  center-block text-left cb-75-100 mx-auto mt-3" style=" height: 20em; ">
+  <div class="card" style="background-color: #9bd1f2">
+    <div class="card-body">
+      <h3 class="card-title">{{this.city}}</h3>
+
+<!--      <div class="card-group mb-5 w-100 border-5">-->
+
+        <div class="row mb-5">
+        <div class="col-7 ">
+          <h4 class="card-subtitle  mb-2 text-muted">{{this.timezone}}</h4>
+          <div class="card-text my-3 ml-3">
+            <div class="row">
+              <h2 class="card-text">{{this.temperature}}</h2>
+              <img src="https://cdn3.iconfinder.com/data/icons/virtual-notebook/16/button_shape_oval-512.png"
+                   height="10" width="10"  alt="circle">
+              <h2 class="card-text">F</h2>
+            </div>
+          </div>
+          <h5 class="card-text">{{this.summary}}</h5>
+        </div>
+
+
+        <div class="col-5 text-center">
+          <img  src="{{this.seal}}" alt="This is Seal!" class="cb-img rounded-circle mx-auto">
+        </div>
+<!--        </div>-->
+
+      </div>
+
+
+      <div class="card-deck">
+        <div class="row">
+        <ng-container *ngFor="let feature of this.features" >
+          <div class="col-2">
+          <div   *ngIf="feature.index!=0" class="card border-0 bg-transparent text-center">
+            <img *ngIf="feature.index!=0" class="card-img-top" src="{{feature.url}}" alt="{{feature.name}}"  placement="top" ngbTooltip="{{feature.name}}">
+            <p   *ngIf="feature.index!=0" class="card-text" id="feature.name">{{feature.index}}</p>
+          </div>
+          </div>
+        </ng-container>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+

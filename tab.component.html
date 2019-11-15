@@ -1,0 +1,34 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<div class="card center-block text-center cb-warning mx-auto mt-3 border-0">
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-current-tab" data-toggle="tab" href="#nav-current" role="tab" aria-controls="nav-current" aria-selected="true"><p>Current</p></a>
+      <a class="nav-item nav-link"  id="nav-hourly-tab" (click)="showHour()" data-toggle="tab" href="#nav-hourly" role="tab" aria-controls="nav-hourly" aria-selected="false"><p>Hourly</p></a>
+      <a class="nav-item nav-link" id="nav-weekly-tab" (click)="showWeek()" data-toggle="tab" href="#nav-weekly" role="tab" aria-controls="nav-weekly" aria-selected="false"><p>Weekly</p></a>
+      <a class="nav-item ml-auto mr-1"
+         href="https://twitter.com/intent/tweet?text={{urlText}}"
+         target="_blank">
+        <img src="http://csci571.com/hw/hw8/Images/Twitter.png" class="cb-img" alt="">
+      </a>
+      <button mat-icon-button class="nav-item mr-3 mt-n1" (click)="this.favor ? deleteFavor() : addFavor()">
+          <mat-icon class="material-icons" [style.color]="this.favor ? '#ffd530': 'black'">
+            {{this.favor ? 'star':'star_border'}}
+          </mat-icon>
+      </button>
+    </div>
+  </nav>
+
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane show active" id="nav-current" role="tabpanel" aria-labelledby="nav-current-tab">
+      <app-current></app-current>
+    </div>
+    <div class="tab-pane text-left" id="nav-hourly" role="tabpanel" aria-labelledby="nav-hourly-tab">
+      <app-charts></app-charts>
+    </div>
+    <div class="tab-pane " id="nav-weekly" role="tabpanel" aria-labelledby="nav-weekly-tab">
+      <app-weekly ></app-weekly>
+    </div>
+  </div>
+</div>

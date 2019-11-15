@@ -1,0 +1,15 @@
+p {margin-bottom: 0;}
+
+@media screen and (min-width: 601px) {
+  .mat-icon {font-size: 40px;}
+  .cb-img {width: 40px; height: 40px;}
+  p {font-size: 20px;}
+  .cb-warning {width: 75%}
+}
+
+@media screen and (max-width: 600px) {
+  .mat-icon {font-size: 30px;}
+  .cb-img {width: 30px; height: 30px;}
+  p {font-size: 10px;}
+  .cb-warning {width: 95%}
+}

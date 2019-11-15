@@ -1,0 +1,50 @@
+<div *ngIf="exist" class="card center-block text-center cb-warning mx-auto mt-3 border-0">
+  <table *ngIf="favor" class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Image</th>
+      <th scope="col">City</th>
+      <th scope="col">State</th>
+      <th scope="col">Favorites</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let city of cities; let i = index">
+      <th scope="row">{{i+1}}</th>
+      <td><img src="{{city[2]}}" alt="This is Seal!" class="cb-img rounded-circle mx-auto"></td>
+      <td>
+        <a href="#" (click)="openTab(city, i)" placement="top" ngbTooltip="{{city[0]}}">{{city[0]}}</a>
+      </td>
+      <td>{{city[1]}}</td>
+      <td>
+        <button  class="cb" type="reset" (click)="deleteFavor(i)">
+          <mat-icon class="material-icons" style="color: #dba522;">delete</mat-icon>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="warning" class="alert alert-warning mt-5 text-left" role="alert">
+    No Records.
+  </div>
+
+</div>
+
+
+
+<div *ngIf="bar" class="progress w-75 mx-auto mt-3">
+  <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+<app-tab [hidden]="tabHidden"></app-tab>
+
+
+<!--<tr>-->
+<!--  <th scope="row">1</th>-->
+<!--  <td> <img src="{{this.seal}}" height="50" width="50" alt="This is Seal!" class="rounded-circle mx-auto"> </td>-->
+<!--  <td>{{this.city}}</td>-->
+<!--  <td>{{this.state}}</td>-->
+<!--  <td>Bin</td>-->
+<!--</tr>-->

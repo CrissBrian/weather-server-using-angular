@@ -1,0 +1,21 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+:root{
+  --cbblue:		#6592AD;
+}
+
+.cbShadow {
+  box-shadow: 8px 8px 6px 1px rgba(0,0,0,0.5);
+}
+
+@media screen and (min-width: 601px) {
+  h3 {font-size: 40px;}
+  .cbForm {width: 50%;}
+  .cb-warning {width: 75%}
+}
+
+@media screen and (max-width: 600px) {
+  h3 {font-size: 30px;}
+  .cbForm {width: 95%}
+  .cb-warning {width: 95%}
+}

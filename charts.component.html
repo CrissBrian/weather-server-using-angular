@@ -1,0 +1,21 @@
+<select class="custom-select mr-sm-2 cb-25-100 mt-3" #feature (change)="onChange(feature.value)">
+  <option value='0'>Temperature</option>
+  <option value='1'>Pressure</option>
+  <option value='2'>Humidity</option>
+  <option value='3'>Ozone</option>
+  <option value='4'>Visibility</option>
+  <option value='5'>Wind Speed</option>
+</select>
+
+<div>
+  <div style="display: block">
+    <canvas baseChart #myChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [colors]="barChartColors"
+            [legend]="barChartLegend"
+            [chartType]="barChartType">
+    </canvas>
+  </div>
+</div>
